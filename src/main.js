@@ -1,6 +1,6 @@
-import { dialogueData, scaleFactor } from "./constants";
 import { k } from "./kaboomCtx";
 import { displayDialogue, setCamScale } from "./utils";
+import { dialogueData, scaleFactor } from "./constants";
 
 k.loadSprite("spritesheet", "./spritesheet.png", {
   sliceX: 39,
@@ -13,24 +13,24 @@ k.loadSprite("spritesheet", "./spritesheet.png", {
     "idle-up": 1014,
     "walk-up": { from: 1014, to: 1017, loop: true, speed: 8 },
   },
-});
+}); //Loads up the entire spritesheet.
 
-k.loadSprite("map", "./map.png");
+k.loadSprite("map", "./map.png"); //Loads up the map.
 
-k.setBackground(k.Color.fromHex("#311047"));
+k.setBackground(k.Color.fromHex("#311047")); //Sets the color of the background.
 
 k.scene("main", async () => {
   const mapData = await (await fetch("./map.json")).json();
   const layers = mapData.layers;
 
-  const map = k.add([k.sprite("map"), k.pos(0), k.scale(scaleFactor)]);
+  const map = k.add([k.sprite("map"), k.pos(0, 0), k.scale(4)]); //Adds map sprite at the position 0,0
 
   const player = k.make([
     k.sprite("spritesheet", { anim: "idle-down" }),
     k.area({
       shape: new k.Rect(k.vec2(0, 3), 10, 10),
-    }),
-    k.body(),
+    }), //Define collision area for a game object
+    k.body(), //Adds physics based movement and collisions
     k.anchor("center"),
     k.pos(),
     k.scale(scaleFactor),
@@ -39,7 +39,7 @@ k.scene("main", async () => {
       direction: "down",
       isInDialogue: false,
     },
-    "player",
+    "player", //Tag for easy implementation
   ]);
 
   for (const layer of layers) {
@@ -90,7 +90,7 @@ k.scene("main", async () => {
 
   k.onUpdate(() => {
     k.camPos(player.worldPos().x, player.worldPos().y - 100);
-  });
+  }); //An event listener that runs a callback function every frame.
 
   k.onMouseDown((mouseBtn) => {
     if (mouseBtn !== "left" || player.isInDialogue) return;
