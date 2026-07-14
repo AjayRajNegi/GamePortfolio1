@@ -10,7 +10,7 @@ export const dialogueData = {
    <a href="https://www.youtube.com/@ThePrimeTimeagen" target="_blank">Theprimeagen</a>, <a href="https://www.youtube.com/@t3dotgg" target="_blank">Theo - t3.gg</a>,
   <a href="https://www.youtube.com/@PirateSoftware" target="_blank">PirateSoftware</a> (sometimes) and <a href="https://www.youtube.com/@MelkeyDev" target="_blank">Melkey</a>!`,
   bed: `This where I sleep. Great ideas comes when I'm lying on my bed. When an idea strikes, I often have to write it down or else I won't be able to sleep because my mental energy is consumed by it.`,
-  resume: `This is my desk and on it is my resume. <a href="https://my-resume-topaz-five.vercel.app/" target="_blank">Check it out?</a>. I haven't updated it in long time though😬
+  resume: `This is my desk and on it is my resume. <a href="https://resume.ajayhtml.online/" target="_blank">Check it out?</a>. I haven't updated it in long time though😬
   Contact me at ajayrajnegi1608@gmail.com if you have any interesting job opportunities!`,
   projects: `Info about this portfolio : It's made with the Kaboom.js library which is a library for making games in JavaScript.
   Text is rendered with HTML/CSS. So the textbox you're currently reading is not rendered within canvas. `,
